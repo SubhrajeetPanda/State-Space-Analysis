@@ -13,6 +13,6 @@ for x=1:size(A,2)
     end;
 end;
 G=graph(s,t,weights);
-p = plot(G,'EdgeLabel',G.Edges.Weight);
+p = plot(G,'EdgeLabel',G.Edges.Weight,'Layout','layered');
 t=minspantree(G,'Method','sparse');
 highlight(p,t);
