@@ -9,7 +9,11 @@ for x=1:size(A,2)
     if(Z(x,x)==conj(Z(x,x)))
         weights=[weights 0];
     else
-        weights=[weights Z(x,x)/i];
+        if (Z(x,x)/i < 0)
+            weights=[weights -1];
+        else
+            weights=[weights 1];
+        end;
     end;
 end;
 G=graph(s,t,weights);
