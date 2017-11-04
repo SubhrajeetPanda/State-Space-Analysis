@@ -17,6 +17,10 @@ for x=1:size(A,2)
     end;
 end;
 G=graph(s,t,weights);
+G.Edges.Bno=[1:size(A,2)]';
 p = plot(G,'EdgeLabel',G.Edges.Weight,'Layout','layered');
-t=minspantree(G,'Method','sparse');
-highlight(p,t);
+T=minspantree(G,'Method','sparse');
+highlight(p,T);
+Fmat;
+
+    
