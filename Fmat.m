@@ -4,11 +4,11 @@ L=rmedge(G,t2(:,1)',t2(:,2)');
 l=table2array(L.Edges(:,2:3));
 % 
 % -(At-1 Al)'
-
+A=A(1:size(A,1)-1,:)
 l=sortrows(l,1);
 t=sortrows(t,1);
 At=A(:, t(:,2)');
 Al=A(:,l(:,2)');
-F=[eye(size(l,1)), -round((pinv(At)*Al)',0)]
+F=[-round((inv(At)*Al)',0)]
 
         
