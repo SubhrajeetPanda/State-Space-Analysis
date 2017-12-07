@@ -11,13 +11,13 @@ K=Flc'-Frc'*inv(R)*Frg*Z(t(c+1:c+g,2)',t(c+1:c+g,2)')*Flg';
 
 Af=[-inv(C)*Y inv(C)*K;
     -inv(L)*K' -inv(L)*Zi];
-x=[];
+x0=[];
 for i=1:c
     a=input(sprintf('Enter intial value of voltage in branch %d ',t(i,2)));
-    x=[x a];
+    x0=[x0 a];
 end
 for i=1:ll
     a=input(sprintf('Enter inital value of current in branch %d ',l(s+r+i,2)));
-    x=[x a];
+    x0=[x0 a];
 end
-x=x';
+[t x]=ode45('check',[0 10],x0,[],Af);
