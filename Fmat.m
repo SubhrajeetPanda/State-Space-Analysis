@@ -21,4 +21,4 @@ Flc=F(s+r+1:s+r+ll,1:c);
 Flg=F(s+r+1:s+r+ll,c+1:c+g);
 Flt=F(s+r+1:s+r+ll,c+g+1:c+g+tau);
 matrix;
-
+F
